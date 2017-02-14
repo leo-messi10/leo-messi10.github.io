@@ -1,0 +1,99 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<link href="https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+<title> Happy Birthday !</title></head>
+<body background="star.jpg">
+<canvas id="c"></canvas>
+<audio controls autoplay loop>
+
+  <source src="audio.mp3" type="audio/mpeg">
+
+</audio>
+<p style="font-family:'Indie Flower',cursive; color:white; font-size:52;" align="center"><marquee width=470 direction="right" behavior="alternate"><img src="mycloud1.png" width=180px height=140px align="left"></marquee> Happy Birthday !
+<marquee width=470 behavior="alternate"><img src="mycloud8.png" width=180px height=140px align="middle"></marquee></br>Surbhi</br>
+<marquee width=470 direction="right" behavior="alternate"><img src="lg1.jpg" align="left" style="width:180px;height:120px;"></marquee>
+<img src="cake1.jpg" align="middle" style="width:320px;height:240px;">
+<marquee width=470 behavior="alternate"><img src="lg2.jpg" align="middle" style="width:180px;height:120px;"></marquee><p style="font-family:'Bilbo Swash Caps',cursive; color:white; font-size:42;" align="center">Have a wonderful and a joyous year ahead !</br>Always Keep Smiling :)</p>
+</p>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+<style>
+body, html {
+  margin: 0px; 
+  padding: 0px; 
+}
+body{width:100%;}
+audio { 
+   display:none;
+}
+canvas {
+  z-index: 999; 
+  margin: 0px; 
+  padding: 0px; 
+  background-color: transparent; 
+  position: absolute; 
+}
+
+h1, p {
+  text-align: center; 
+}
+
+</style>
+
+
+
+
+
+
+<script>
+var rainNum = 187;
+
+var canvas = document.getElementById('c');
+var ctx = canvas.getContext('2d');
+
+var w = window.innerWidth; var h =window.innerHeight;
+var x = 100; var y = 100;
+
+var rain = [];
+for(i = 0; i < rainNum; i++) {
+  rain.push(new newRain);
+}
+
+function newRain() {
+  this.x = Math.random() * w;
+  this.y = Math.random() * h;
+}
+
+var draw = function() {
+  c.width = w;
+  c.height = h;
+
+  for(t = 0; t < rain.length; t++) {
+    var r = rain[t];
+
+    ctx.beginPath();
+    ctx.fillStyle = '#33FFE0';
+    ctx.fillRect(r.x, r.y, 2, 8);
+
+    r.y++;
+
+    if(r.y > h + 20) {
+      r.y = -20;
+    }
+  }
+};
+
+setInterval(draw,1/100);
+</script>
